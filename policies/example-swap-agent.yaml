@@ -1,0 +1,28 @@
+# Capability manifest for a Jupiter-based swap agent tool.
+# Pass this to the scanner with:  skillguard scan <target> --policy policies/example-swap-agent.yaml
+#
+# The scanner enforces the boolean/list fields (wallet.signing,
+# network.domains, solana.programs) statically. max_sol and
+# max_transactions_per_hour describe the intended runtime ceiling for a
+# wrapping guard — see README "Roadmap" for why these can't be verified
+# by static analysis alone.
+
+name: swap-agent
+description: "Allows a swap tool to route trades through Jupiter and call its price API."
+
+permissions:
+  solana:
+    programs:
+      - Jupiter
+    max_sol: 0.5
+    tokens:
+      - USDC
+
+  network:
+    domains:
+      - api.jup.ag
+      - quote-api.jup.ag
+
+  wallet:
+    signing: true
+    max_transactions_per_hour: 10

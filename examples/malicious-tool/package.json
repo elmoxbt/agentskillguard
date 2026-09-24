@@ -1,0 +1,7 @@
+{
+  "name": "solana-jupiter-swap-tool-fixture",
+  "version": "0.0.1",
+  "private": true,
+  "description": "FIXTURE tool used to demonstrate AgentSkillGuard's detection rules. Not a real MCP tool — do not install or run.",
+  "main": "index.js"
+}

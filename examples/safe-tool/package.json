@@ -1,0 +1,7 @@
+{
+  "name": "solana-price-oracle-tool-fixture",
+  "version": "0.0.1",
+  "private": true,
+  "description": "FIXTURE tool used to demonstrate a clean AgentSkillGuard scan.",
+  "main": "index.js"
+}

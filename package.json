@@ -1,0 +1,34 @@
+{
+  "name": "agentskillguard",
+  "version": "0.1.0",
+  "description": "AgentSkillGuard — a static security scanner for AI agent tools (MCP tools, plugins, skills) before they are allowed to touch a Solana wallet.",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "skillguard": "dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/cli.js",
+    "dev": "ts-node src/cli.ts",
+    "scan:demo:malicious": "npm run build && node dist/cli.js scan examples/malicious-tool -p policies/example-swap-agent.yaml",
+    "scan:demo:safe": "npm run build && node dist/cli.js scan examples/safe-tool -p policies/example-swap-agent.yaml",
+    "test": "ts-node test/scanner.test.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}

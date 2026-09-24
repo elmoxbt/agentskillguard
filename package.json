@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "AgentSkillGuard — a static security scanner for AI agent tools (MCP tools, plugins, skills) before they are allowed to touch a Solana wallet.",
   "license": "MIT",
-  "private": true,
   "bin": {
     "skillguard": "dist/cli.js"
   },
